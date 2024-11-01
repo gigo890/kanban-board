@@ -1,0 +1,14 @@
+C:\Users\klw74\OneDrive\Documents\University\repositories\kanban-board\kanban-board\bin\Debug\net6.0\kanban-board.exe
+C:\Users\klw74\OneDrive\Documents\University\repositories\kanban-board\kanban-board\bin\Debug\net6.0\kanban-board.deps.json
+C:\Users\klw74\OneDrive\Documents\University\repositories\kanban-board\kanban-board\bin\Debug\net6.0\kanban-board.runtimeconfig.json
+C:\Users\klw74\OneDrive\Documents\University\repositories\kanban-board\kanban-board\bin\Debug\net6.0\kanban-board.dll
+C:\Users\klw74\OneDrive\Documents\University\repositories\kanban-board\kanban-board\bin\Debug\net6.0\kanban-board.pdb
+C:\Users\klw74\OneDrive\Documents\University\repositories\kanban-board\kanban-board\obj\Debug\net6.0\kanban-board.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\klw74\OneDrive\Documents\University\repositories\kanban-board\kanban-board\obj\Debug\net6.0\kanban-board.AssemblyInfoInputs.cache
+C:\Users\klw74\OneDrive\Documents\University\repositories\kanban-board\kanban-board\obj\Debug\net6.0\kanban-board.AssemblyInfo.cs
+C:\Users\klw74\OneDrive\Documents\University\repositories\kanban-board\kanban-board\obj\Debug\net6.0\kanban-board.csproj.CoreCompileInputs.cache
+C:\Users\klw74\OneDrive\Documents\University\repositories\kanban-board\kanban-board\obj\Debug\net6.0\kanban-board.dll
+C:\Users\klw74\OneDrive\Documents\University\repositories\kanban-board\kanban-board\obj\Debug\net6.0\refint\kanban-board.dll
+C:\Users\klw74\OneDrive\Documents\University\repositories\kanban-board\kanban-board\obj\Debug\net6.0\kanban-board.pdb
+C:\Users\klw74\OneDrive\Documents\University\repositories\kanban-board\kanban-board\obj\Debug\net6.0\kanban-board.genruntimeconfig.cache
+C:\Users\klw74\OneDrive\Documents\University\repositories\kanban-board\kanban-board\obj\Debug\net6.0\ref\kanban-board.dll
