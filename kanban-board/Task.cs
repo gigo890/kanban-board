@@ -1,48 +1,28 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class Task
+namespace kanban_board
 {
-	protected int id;
-	protected string name;
-	protected string description;
-	protected DateTime dueDate;
-	protected DateTime completionDate;
-
-
-	public Task(string n, string d, DateTime dd = new DateTime() )
-	{
-		//Constructor for tasks
-		//optional parameter for due date
-
-		name = n;
-		description = d;
-		dueDate = dd;
-	}
-
-	// -- Gets and Sets for all attributes. --
-	public int Id
-	{
-		get { return id; }
-	}
-	public string Name
-	{
-		get { return name; }
-		set { name = value; }
-	}
-    public string Description
+    internal class Task:Item
     {
-        get { return description; }
-        set { description = value; }
-    }
-	public DateTime DueDate
-	{
-		get { return dueDate; }
-		set { dueDate = value; }
-	}
-	public DateTime CompletionDate
-	{
-		get { return completionDate; }
-		set { completionDate = value; }
-	}
+        private DateTime dueDate
+        {
+            get { return dueDate; }
+            set { dueDate = value; }
+        }
 
+        private DateTime completionDate
+        {
+            get { return completionDate; }
+            set { completionDate = value; }
+        }
+        public Task(string n, string d, DateTime dd = new DateTime()) : base(n,d)
+        {
+            this.dueDate = dd;
+        }
+    }
 }
