@@ -3,11 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace kanban_board
 {
-    internal class Task:Item
+    public class Task:Item
     {
         private DateTime dueDate
         {
@@ -20,7 +19,7 @@ namespace kanban_board
             get { return completionDate; }
             set { completionDate = value; }
         }
-        public Task(string n, string d, DateTime dd = new DateTime()) : base(n,d)
+        public Task(string n, string d, string c, DateTime dd = new DateTime()) : base(n,d,c)
         {
             this.dueDate = dd;
         }
