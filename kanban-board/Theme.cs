@@ -7,11 +7,11 @@ namespace kanban_board
 {
     internal class Theme
     {
-        protected Dictionary<string, string[]> themes = new Dictionary<string, string[]>()
+        private Dictionary<string, string[]> themes = new Dictionary<string, string[]>()
         {
-            ["default"] = new[] { "white", "white", "white" }
+            ["default"] = new[] { "\u001b[0m" /*white*/, "\u001b[0m" /*white*/, "\u001b[32m" /*red*/ }
         };
-        protected string currentTheme = "default";
+        private string currentTheme = "default";
 
         public string GetColor(int input)
         {

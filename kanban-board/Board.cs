@@ -20,6 +20,14 @@
                 items.Add(new Task(nameInput, descriptionInput, categoryInput));
             }
         }
+		public void MoveCategoryUp()
+		{
+			//Moves current task's category up
+		}
+		public void MoveCategoryDown()
+		{
+			//Moves current task's category down
+		}
 	}
 }
 

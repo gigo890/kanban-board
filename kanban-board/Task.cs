@@ -8,6 +8,7 @@ namespace kanban_board
 {
     public class Task:Item
     {
+        //an Item that denotes a specific task that can or cannot have a date it should be completed by. 
         private DateTime dueDate
         {
             get { return dueDate; }
