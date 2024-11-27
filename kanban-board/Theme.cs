@@ -17,5 +17,14 @@ namespace kanban_board
         {
             return themes[currentTheme][input];
         }
+        public void WriteBinary(BinaryWriter bw)
+        {
+            bw.Write("Theme");
+            bw.Write(currentTheme);
+        }
+        public void ReadBinary(BinaryReader br)
+        {
+            this.currentTheme = br.ReadString();
+        }
     }
 }
