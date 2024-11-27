@@ -1,12 +1,12 @@
 ﻿using System;
 namespace kanban_board
 {
-	public class Item
+	public abstract class Item
 	{
 		//Master class for every type of item included in a board. 
 		protected string name;
 		protected string description;
-		protected string category;
+		protected int category;
 		public string Name
 		{
 			get { return name; }
@@ -17,20 +17,23 @@ namespace kanban_board
 			get { return description; }
 			set { description = value; }
 		}
-		public string Category
+		public int Category
 		{
 			get { return category; }
 			set { category = value; }
 		}
 
 
-		public Item(string n, string d, string c)
+		public Item(string n, string d, int c)
 		{
-			//Constructor for tasks
+			//Constructor for items
 
 			this.name = n;
 			this.description = d;
 			this.category = c;
 		}
+
+		public abstract void WriteBinary(BinaryWriter bw);
+		public abstract void ReadBinary(BinaryReader br);
 	}
 }

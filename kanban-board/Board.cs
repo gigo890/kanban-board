@@ -9,7 +9,7 @@
 			this.items = new List<Item>();
 			this.categories = new List<string>() { "To Do","Doing","Done"};
 		}
-		public void AddTask(string nameInput, string descriptionInput, string categoryInput, DateTime dueDateInput = new DateTime())
+		public void AddTask(string nameInput, string descriptionInput, int categoryInput, DateTime dueDateInput = new DateTime())
 		{
 			if(dueDateInput == new DateTime())
 			{
