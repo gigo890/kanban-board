@@ -28,6 +28,30 @@
 		{
 			//Moves current task's category down
 		}
+		public void WriteBinary(BinaryWriter bw)
+		{
+			bw.Write("Board");
+			bw.Write(items.Count);
+			foreach(Item item in items)
+			{
+				item.WriteBinary(bw);
+			}
+			bw.Write(categories.Count);
+			foreach(string category in categories)
+			{
+				bw.Write(category);
+			}
+			//options for writing a list to binary file: 
+			//- iterate over the list and use the WriteBinary function for each item
+			//- 
+		}
+		public void ReadBinary(BinaryReader br)
+		{
+			for(int i = 0; i < br.ReadInt32(); i++)
+			{
+				this.items.Add()
+			}
+		}
 	}
 }
 
