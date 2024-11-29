@@ -71,7 +71,7 @@ namespace kanban_board
                     break;
 
                 case "Create New Board":
-                    Console.WriteLine($"{theme.GetColor(0)}")
+                    Console.WriteLine($"{theme.GetColor(0)}//--Board Create--//");
                     break;
 
                 case "Select Theme":
