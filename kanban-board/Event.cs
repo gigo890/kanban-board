@@ -7,9 +7,12 @@ namespace kanban_board
 {
     internal class Event:Item
     {
-        //an Item that denotes a period of time where an event takes place
-        private DateTime startDate;
-        private DateTime endDate;
+        //--ATTRIBUTES--//   
+
+        private DateTime startDate;//when the event starts
+        private DateTime endDate; //when the event ends
+
+        //public gets and sets for each attribute
         public DateTime StartDate
         {
             get { return this.startDate; }
@@ -20,11 +23,15 @@ namespace kanban_board
             get { return this.endDate; }
             set { this.endDate = value; }
         }
+
+        //Constructor for Event, taking base values from Item
         public Event(string n, string d, string c, DateTime sd, DateTime ed): base(n,d,c)
         {
             this.startDate = sd;
             this.endDate = ed;
         }
+
+        //--METHODS-//
         public override void WriteBinary(BinaryWriter bw)
         {
             bw.Write("EventItem");
