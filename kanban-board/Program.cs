@@ -7,53 +7,15 @@ namespace kanban_board
         static void Main(string[] args)
         {
             Theme theme = new Theme();
+            List<Board> boards = new List<Board>();
+            Board currentBoard;
 
             Console.WriteLine("Welcome to this Kanban Board program.");
             Console.WriteLine("Please select an option:");
 
-            //ConsoleKeyInfo key;
-            //int optionMin = 2;
-            //int option = 2;
-            //bool isSelected = false;
-            //(int left, int top) = Console.GetCursorPosition();
-            //Console.CursorVisible = false;
-            //string colourOne = theme.GetColor(0);
-            //string colourTwo = theme.GetColor(1);
-            //string selectedColour = theme.GetColor(2);
-
-            //while(!isSelected)
-            //{
-            //    Console.SetCursorPosition(left, top);
-            //    if (File.Exists("boards.json"))
-            //    {
-            //        Console.WriteLine($"{(option == 1 ? selectedColour : "")}Open Board{colourOne}[0m");
-            //        optionMin = 1;
-            //        option = 1;
-            //    }
-            //    Console.WriteLine($"{(option == 2 ? selectedColour : ""/*THEME FUNCTION HERE*/)}Option 1{colourOne}");
-            //    Console.WriteLine($"{(option == 3 ? selectedColour : ""/*THEME FUNCTION HERE*/)}Option 2{colourOne}");
-            //    Console.WriteLine($"{(option == 4 ? selectedColour : ""/*THEME FUNCTION HERE*/)}Option 3{colourOne}");
-
-            //    key = Console.ReadKey(true);
-            //    switch (key.Key)
-            //    {
-            //        case ConsoleKey.DownArrow:
-            //            option = (option == 4 ? optionMin : option + 1);
-            //            break;
-
-            //        case ConsoleKey.UpArrow:
-            //            option = (option == optionMin ? 4 : option - 1); 
-            //            break;
-
-            //        case ConsoleKey.Enter:
-            //            isSelected = true;
-            //            break;
-            //    }
-            //}
-
             //Generating the Main Menu
             string[] options;
-            if (File.Exists("boards.json")) //the "Open Board" option only shows when a board already exists 
+            if (File.Exists("Boards.dat")) //the "Open Board" option only shows when a board already exists 
                     {
                         options = new string[] { "Open Board", "Create New Board", "Select Theme", "Exit Program" };
                     }
@@ -122,70 +84,29 @@ namespace kanban_board
             }
             return options[selected]; //outputs the selected option
         }
-            //options:
-            //open board (if there are boards)
-            //create new board
-            //exit program
+           
+        public void ReadBoardFromBinaryFile()
+        {
+            Board board = new Board();
 
+            FileStream fsr = new FileStream("Boards.dat", FileMode.Open);
+            BinaryReader br = new BinaryReader(fsr);
 
-            //string[] options = { "Open Board", "Create New Board", "select theme" "[Exit]" };
-            //string[] options;
+            for(int i = 0; i < br.ReadInt32(); i++)
+            {
+                board.ReadBinary(br);
+            }
+        }
+        public void WriteBoardToBinaryFile(List<Board> boardsToWrite) 
+        {
+            FileStream fsr = new FileStream("Boards.dat", FileMode.Create);
+            BinaryWriter bw = new BinaryWriter(fsr);
 
-            //if (File.Exists("boards.json"))
-            //{
-            //    options = new string[] { "Open Board", "Create New Board", "Select Theme", "[Exit]" };
-            //}
-            //else
-            //{
-            //    options = new string[] { "Create New Board", "Select Theme", "[Exit]" };
-            //}
-
-
-
-        
-
-        //potential class/functions for handling multiple choice
-        //public int TraverseMenuUp(string[] options, int current)
-        //{
-        //    if(current == 0)
-        //    {
-        //        return options.Length - 1;
-        //    }
-        //    else
-        //    {
-        //        return current + 1;
-        //    }
-        //}
-
-        //public int TraverseMenuDown(string[options], int current)
-        //{
-
-        //}
-        //public string MainMenu(string[] optionsInput)
-        //{
-        //    string[] options = optionsInput;
-        //    int currentOption = 0;
-        //    var keyCommands = new Dictionary<string, Action>();
-        //    string key = " ";
-
-        //    keyCommands["Up"] = TraverseMenuUp;
-        //    keyCommands["Down"] = TraverseMenuDown;
-
-        //    while ((int)key[0] != 27)
-        //    {
-        //        key = Console.ReadKey(true).KeyChar.ToString().ToUpper();
-
-        //        if (keyCommands.ContainsKey(key))
-        //        {
-        //            currentOption = keyCommands[key]();
-        //        }
-        //    }
-        //}
-        //public void MainMenuDisplay(string[] options)
-        //{
-
-        //}
-
+            foreach(Board board in boardsToWrite)
+            {
+                board.WriteBinary(bw);
+            }
+        }
     }
     
 }
