@@ -22,10 +22,11 @@ namespace kanban_board
             get { return completionDate; }
             set { completionDate = value; }
         }
-        public Task(string n, string d, int c, DateTime dd = new DateTime()) : base(n,d,c)
-        {
-            this.dueDate = dd;
-        }
+
+        //public Task(string n, string d, int c, DateTime dd = new DateTime()) : base(n,d,c)
+        //{
+        //    this.dueDate = dd;
+        //}
 
         public override void WriteBinary(BinaryWriter bw)
         {

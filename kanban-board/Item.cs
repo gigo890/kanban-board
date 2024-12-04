@@ -23,15 +23,16 @@ namespace kanban_board
 			set { category = value; }
 		}
 
+		//Constructor removed since I need to have an empty Item when reading from binary
 
-		public Item(string n, string d, int c)
-		{
-			//Constructor for items
+		//public Item(string n, string d, int c)
+		//{
+		//	//Constructor for items
 
-			this.name = n;
-			this.description = d;
-			this.category = c;
-		}
+		//	this.name = n;
+		//	this.description = d;
+		//	this.category = c;
+		//}
 
 		public abstract void WriteBinary(BinaryWriter bw);
 		public abstract void ReadBinary(BinaryReader br);

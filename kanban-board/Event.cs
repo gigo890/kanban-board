@@ -25,11 +25,11 @@ namespace kanban_board
         }
 
         //Constructor for Event, taking base values from Item
-        public Event(string n, string d, string c, DateTime sd, DateTime ed): base(n,d,c)
-        {
-            this.startDate = sd;
-            this.endDate = ed;
-        }
+        //public Event(string n, string d, string c, DateTime sd, DateTime ed): base(n,d,c)
+        //{
+        //    this.startDate = sd;
+        //    this.endDate = ed;
+        //}
 
         //--METHODS-//
         public override void WriteBinary(BinaryWriter bw)
