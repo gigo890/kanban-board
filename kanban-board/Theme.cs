@@ -9,7 +9,8 @@ namespace kanban_board
     {
         private Dictionary<string, string[]> themes = new Dictionary<string, string[]>()
         {
-            ["default"] = new[] { "\u001b[0m" /*white*/, "\u001b[0m" /*white*/, "\u001b[32m" /*red*/ }
+            // COLOUR THEMES   | Default text |      | Titles/Headings |       | Selected | 
+            ["default"] = new[] { "\u001b[0m" /*white*/, "\u001b[0m" /*white*/, "\u001b[32m" /*green*/ }
         };
         private string currentTheme = "default";
 

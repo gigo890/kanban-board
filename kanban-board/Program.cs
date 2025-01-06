@@ -33,7 +33,7 @@ namespace kanban_board
                     break;
 
                 case "Create New Board":
-                    Console.WriteLine($"{theme.GetColor(0)}//--Board Create--//");
+                    Console.WriteLine($"{theme.GetColor(1)}//--Board Create--//{theme.GetColor(0)}");
                     break;
 
                 case "Select Theme":
@@ -54,7 +54,7 @@ namespace kanban_board
             Console.CursorVisible = false; //makes the cursor invisible
 
             //Gets colours for theme
-            string textColour = theme.GetColor(1);
+            string textColour = theme.GetColor(0);
             string selectedColour = theme.GetColor(2);
 
             while(!isComplete){
@@ -84,7 +84,6 @@ namespace kanban_board
             }
             return options[selected]; //outputs the selected option
         }
-           
         public void ReadBoardFromBinaryFile()
         {
             Board board = new Board();
@@ -92,10 +91,14 @@ namespace kanban_board
             FileStream fsr = new FileStream("Boards.dat", FileMode.Open);
             BinaryReader br = new BinaryReader(fsr);
 
+            //ITEMS READING
             for(int i = 0; i < br.ReadInt32(); i++)
             {
                 board.ReadBinary(br);
             }
+
+            //CATEGORY READING
+
         }
         public void WriteBoardToBinaryFile(List<Board> boardsToWrite) 
         {
